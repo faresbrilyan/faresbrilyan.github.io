@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faresya Brilyan Dwiputra - Portfolio</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield"></canvas>
+    <div class="nebula"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">FARESYA</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tagline">Information System Student & Creative Media</span>
+                <h1 class="hero-title">Faresya Brilyan <span class="text-gradient">Dwiputra</span></h1>
+                <p class="hero-description">Mahasiswa Sistem Informasi di Politeknik Negeri Subang yang termotivasi dalam inovasi teknis dan media kreatif.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="#about" class="btn btn-outline">Kenali Saya</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glow-sphere"></div>
+                <img src="img/Fares.jpeg" alt="Faresya Brilyan Dwiputra" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about animate-on-scroll">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>Saat ini saya fokus mengembangkan proyek WanderMed Digital Map untuk Kabupaten Subang, sebuah platform untuk membantu wisatawan mencari fasilitas kesehatan terdekat secara real-time.</p>
+                <p>Saya memiliki ketertarikan besar dalam menggabungkan logika backend dengan solusi digital yang bermanfaat, serta aktif di bidang videografi.</p>
+                
+                <div class="social-links-about">
+                    <a href="https://instagram.com/frsybrlyn" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:brilyannfaresya02@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/faresbrilyan" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+
+                <a href="assets/CV%20Faresya.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title text-center">Technical Skills</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-target="skills" data-filter="all">Semua</button>
+                <button class="filter-btn" data-target="skills" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-target="skills" data-filter="network">Networking</button>
+                <button class="filter-btn" data-target="skills" data-filter="analysis">Analysis</button>
+                <button class="filter-btn" data-target="skills" data-filter="creative">Creative</button>
+            </div>
+
+            <div class="grid-container skills-grid">
+                <!-- Web Dev -->
+                <div class="card skill-card" data-category="web">
+                    <i class="fa-brands fa-php"></i>
+                    <h3>PHP</h3>
+                </div>
+                <div class="card skill-card" data-category="web">
+                    <i class="fa-brands fa-laravel"></i>
+                    <h3>Laravel</h3>
+                </div>
+                <div class="card skill-card" data-category="web">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>SQL/MySQL</h3>
+                </div>
+
+                <!-- Networking -->
+                <div class="card skill-card" data-category="network">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Cisco</h3>
+                </div>
+                <div class="card skill-card" data-category="network">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <h3>Excel VBA</h3>
+                </div>
+
+                <!-- Analysis & Data -->
+                <div class="card skill-card" data-category="analysis">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h3>UML</h3>
+                </div>
+                <div class="card skill-card" data-category="analysis">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Basis Data</h3>
+                </div>
+                <div class="card skill-card" data-category="analysis">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <h3>DFD</h3>
+                </div>
+
+                <!-- Creative -->
+                <div class="card skill-card" data-category="creative">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>Videografi</h3>
+                </div>
+                <div class="card skill-card" data-category="creative">
+                    <i class="fa-solid fa-film"></i>
+                    <h3>Produksi Film Pendek</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title text-center">Experience & Activities</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-target="experience" data-filter="all">All</button>
+                <button class="filter-btn" data-target="experience" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-target="experience" data-filter="project">Project</button>
+            </div>
+            <div class="experience-list">
+                <div class="card exp-card horizontal-card" data-category="project">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pengembang Proyek - WanderMed Digital Map</h3>
+                        <span class="date">Saat Ini</span>
+                        <p>Membangun web pelacakan fasilitas kesehatan dengan navigasi rute real-time.</p>
+                    </div>
+                </div>
+                <div class="card exp-card horizontal-card" data-category="project academic">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ketua Tim Sistem Manajemen Gudang - UMKM Wiguna Nusantara</h3>
+                        <span class="date">2025</span>
+                        <p>Memimpin perancangan sistem manajemen inventaris berbasis Excel VBA.</p>
+                    </div>
+                </div>
+                <div class="card exp-card horizontal-card" data-category="project">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Anggota Tim Website Bisnis - "d'bubuy ma'atik"</h3>
+                        <span class="date">2025</span>
+                        <p>Membangun arsitektur informasi dan database PHP & MySQL.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title text-center">Achievements</h2>
+            <div class="grid-container achievement-grid">
+                <div class="card achievement-card">
+                    <div class="card-icon-center">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3>Juara 1 Kompetisi Film Pendek Internasional</h3>
+                    <p>Politeknik Negeri Sambas</p>
+                </div>
+                <div class="card achievement-card">
+                    <div class="card-icon-center">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3>Juara 2 Subang Innovation Festival</h3>
+                    <p>Sistem Inventaris VBA</p>
+                </div>
+                <div class="card achievement-card">
+                    <div class="card-icon-center">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Juara Harapan 1 Videografi Nasional</h3>
+                    <p>Sejarah Lokal Subang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Projects</h2>
+            <div class="grid-container project-grid">
+                <div class="card project-card">
+                    <img src="img/Wandermed.png" alt="WanderMed Digital Map" class="project-img">
+                    <div class="project-content">
+                        <h3>WanderMed Digital Map</h3>
+                        <p>Platform pemetaan fasilitas kesehatan real-time untuk mendukung pariwisata di Kabupaten Subang.</p>
+                        <div class="badges">
+                            <span class="badge">Laravel</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">Maps API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/faresbrilyan/wandermed.git" target="_blank" class="btn btn-outline btn-sm">Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <img src="img/dbubuy.png" alt="d'bubuy ma'atik" class="project-img">
+                    <div class="project-content">
+                        <h3>d'bubuy ma'atik</h3>
+                        <p>Platform pemesanan makanan tradisional secara online dengan manajemen inventaris berbasis web.</p>
+                        <div class="badges">
+                            <span class="badge">PHP</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/faresbrilyan/Website-Dbubuy.git" target="_blank" class="btn btn-outline btn-sm">Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <div class="project-img-container">
+                        <img src="img/COMFY.png" alt="Comfy - C System" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Comfy - C System</h3>
+                        <p>Sistem Informasi Pendataan Stok Barang Berbasis VBA di UMKM Wiguna Nusantara.</p>
+                        <div class="badges">
+                            <span class="badge">VBA</span>
+                            <span class="badge">Excel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/COMFY%20-%20C%20SYSTEM.xlsm" download class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download Excel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h2>Tertarik berkolaborasi atau melihat proyek lainnya?</h2>
+            
+            <div class="footer-socials">
+                <a href="https://github.com/faresbrilyan" target="_blank" class="social-icon-footer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/frsybrlyn" target="_blank" class="social-icon-footer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:brilyannfaresya02@gmail.com" class="social-icon-footer"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="mt-4" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">&copy; 2026 Faresya Brilyan Dwiputra. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
