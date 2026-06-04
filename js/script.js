@@ -203,6 +203,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Contact Form Submission ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoBody = `${message}\n\n---\nPengirim: ${name}\nEmail: ${email}`;
+            const mailtoUrl = `mailto:brilyannfaresya02@gmail.com` +
+                              `?subject=${encodeURIComponent(subject)}` +
+                              `&body=${encodeURIComponent(mailtoBody)}`;
+            
+            window.location.href = mailtoUrl;
+        });
+    }
 });
 
 
