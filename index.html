@@ -1,299 +1,604 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faresya Brilyan Dwiputra - Portfolio</title>
-    <!-- Google Fonts: Inter -->
+    <title>Faresya Brilyan Dwiputra - IT Portfolio</title>
+    <meta name="description"
+        content="Portfolio Faresya Brilyan Dwiputra - Mahasiswa Sistem Informasi, Web Developer, dan Kreator Media dari Politeknik Negeri Subang.">
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Starfield Background -->
-    <canvas id="starfield"></canvas>
-    <div class="nebula"></div>
-    <!-- Custom Cursor -->
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">FRSY</div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURSOR GLOW -->
     <div class="cursor-glow"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">FARESYA</a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- BACKGROUND -->
+    <div class="bg-dots" id="bg-dots"></div>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">FRSY<span class="logo-dot">.</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-tagline">Information System Student & Creative Media</span>
-                <h1 class="hero-title">Faresya Brilyan <span class="text-gradient">Dwiputra</span></h1>
-                <p class="hero-description">Mahasiswa Sistem Informasi di Politeknik Negeri Subang yang termotivasi dalam inovasi teknis dan media kreatif.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-                    <a href="#about" class="btn btn-outline">Kenali Saya</a>
+        <div class="hero-layout">
+            <div class="hero-text reveal-left">
+                <div class="hero-label">
+                    <span class="hero-label-dot"></span>
+                    Information System Student &amp; Creative Media
+                </div>
+                <h1 class="hero-heading">
+                    <span class="hero-name-outline">Faresya</span><br>
+                    <span class="hero-name-solid">Brilyan<span class="hero-accent">.</span></span>
+                </h1>
+                <p class="hero-description">
+                    Mahasiswa Sistem Informasi di Politeknik Negeri Subang yang termotivasi dalam inovasi teknis dan
+                    media kreatif.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-rocket"></i> Lihat Proyek
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        Kenali Saya <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/faresbrilyan" target="_blank" class="hero-social-link"
+                        aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://instagram.com/frsybrlyn" target="_blank" class="hero-social-link"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:brilyannfaresya02@gmail.com" class="hero-social-link" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="glow-sphere"></div>
-                <img src="img/Fares.jpeg" alt="Faresya Brilyan Dwiputra" class="hero-img">
+            <div class="hero-visual reveal-right">
+                <div class="hero-img-frame">
+                    <div class="hero-img-aura"></div>
+                    <img src="img/Fares.jpeg" alt="Faresya Brilyan Dwiputra" class="hero-img">
+                    <div class="hero-img-ring hero-img-ring-1"></div>
+                    <div class="hero-img-ring hero-img-ring-2"></div>
+                </div>
+                <div class="hero-badge badge-top">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Web Developer</span>
+                </div>
+                <div class="hero-badge badge-bottom">
+                    <i class="fa-solid fa-film"></i>
+                    <span>Creative Media</span>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about animate-on-scroll">
-        <div class="container about-container">
-            <div class="about-text">
-                <h2 class="section-title">About Me</h2>
-                <p>Saat ini saya fokus mengembangkan proyek WanderMed Digital Map untuk Kabupaten Subang, sebuah platform untuk membantu wisatawan mencari fasilitas kesehatan terdekat secara real-time.</p>
-                <p>Saya memiliki ketertarikan besar dalam menggabungkan logika backend dengan solusi digital yang bermanfaat, serta aktif di bidang videografi.</p>
-                
-                <div class="social-links-about">
-                    <a href="https://instagram.com/frsybrlyn" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:brilyannfaresya02@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://github.com/faresbrilyan" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                </div>
-
-                <a href="assets/CV%20Faresya%20Brilyan.pdf" class="btn btn-outline" target="_blank">Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills bg-light animate-on-scroll">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about section-pad reveal-up">
         <div class="container">
-            <h2 class="section-title text-center">Technical Skills</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" data-target="skills" data-filter="all">Semua</button>
-                <button class="filter-btn" data-target="skills" data-filter="web">Web Dev</button>
-                <button class="filter-btn" data-target="skills" data-filter="network">Networking</button>
-                <button class="filter-btn" data-target="skills" data-filter="analysis">Analysis</button>
-                <button class="filter-btn" data-target="skills" data-filter="creative">Creative</button>
+            <div class="about-layout">
+                <div class="about-left">
+                    <div class="section-chip">Tentang Saya</div>
+                    <h2 class="section-heading">Passionate di Teknologi &amp; <span
+                            class="text-accent">Kreativitas</span></h2>
+                    <p class="about-text">
+                        Saat ini saya fokus mengembangkan proyek <strong>WanderMed Digital Map</strong> untuk Kabupaten
+                        Subang, sebuah platform untuk membantu wisatawan mencari fasilitas kesehatan terdekat secara
+                        real-time.
+                    </p>
+                    <p class="about-text">
+                        Saya memiliki ketertarikan besar dalam menggabungkan logika backend dengan solusi digital yang
+                        bermanfaat, serta aktif di bidang videografi.
+                    </p>
+                    <div class="about-actions">
+                        <a href="assets/CV%20Faresya%20Brilyan.pdf" class="btn btn-primary" target="_blank">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                        </a>
+                        <div class="about-socials">
+                            <a href="https://instagram.com/frsybrlyn" target="_blank" class="social-pill"><i
+                                    class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://github.com/faresbrilyan" target="_blank" class="social-pill"><i
+                                    class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-stats-bento">
+                        <div class="stat-card stat-primary">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Proyek Selesai</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+                            <div class="stat-label">Juara 1 Film Pendek Internasional</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                            <div class="stat-label">Juara 2 Innovation Festival</div>
+                        </div>
+                        <div class="stat-card stat-wide">
+                            <div class="stat-icon-sm"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-label-sm">Institusi</div>
+                                <div class="stat-value-sm">Politeknik Negeri Subang</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & TOOLS SECTION -->
+    <section id="skills" class="skills section-pad reveal-up">
+        <div class="container">
+            <div class="section-header-center">
+                <div class="section-chip">Keahlian</div>
+                <h2 class="section-heading">Skills &amp; <span class="text-accent">Tools</span></h2>
             </div>
 
-            <div class="grid-container skills-grid">
+            <div class="filter-tabs" id="skills-filter">
+                <button class="filter-tab active" data-filter="all">Semua</button>
+                <button class="filter-tab" data-filter="web">Web Dev</button>
+                <button class="filter-tab" data-filter="tools">Dev Tools</button>
+                <button class="filter-tab" data-filter="network">Networking</button>
+                <button class="filter-tab" data-filter="creative">Design &amp; Creative</button>
+                <button class="filter-tab" data-filter="productivity">Productivity</button>
+            </div>
+
+            <div class="skills-bento" id="skills-grid">
+
                 <!-- Web Dev -->
-                <div class="card skill-card" data-category="web">
-                    <i class="fa-brands fa-php"></i>
+                <div class="skill-bento-card skill-wide" data-category="web">
+                    <div class="skill-bento-icon"><i class="devicon-laravel-plain colored"></i></div>
+                    <div class="skill-bento-info">
+                        <h3>Laravel</h3>
+                        <p>PHP Framework</p>
+                    </div>
+                    <div class="skill-bento-glow"></div>
+                </div>
+                <div class="skill-bento-card" data-category="web">
+                    <div class="skill-bento-icon"><i class="fa-brands fa-php"></i></div>
                     <h3>PHP</h3>
                 </div>
-                <div class="card skill-card" data-category="web">
-                    <i class="fa-brands fa-laravel"></i>
-                    <h3>Laravel</h3>
+                <div class="skill-bento-card" data-category="web">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>MySQL</h3>
                 </div>
-                <div class="card skill-card" data-category="web">
-                    <i class="fa-solid fa-database"></i>
-                    <h3>SQL/MySQL</h3>
+                <div class="skill-bento-card" data-category="web">
+                    <div class="skill-bento-icon"><i class="devicon-tailwindcss-plain colored"></i></div>
+                    <h3>Tailwind CSS</h3>
                 </div>
-
-                <!-- Networking -->
-                <div class="card skill-card" data-category="network">
-                    <i class="fa-solid fa-network-wired"></i>
-                    <h3>Cisco</h3>
+                <div class="skill-bento-card" data-category="web">
+                    <div class="skill-bento-icon"><i class="fa-brands fa-js"></i></div>
+                    <h3>JavaScript</h3>
                 </div>
-                <div class="card skill-card" data-category="network">
-                    <i class="fa-solid fa-file-excel"></i>
-                    <h3>Excel VBA</h3>
+                <div class="skill-bento-card" data-category="web">
+                    <div class="skill-bento-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <h3>CSS</h3>
                 </div>
 
-                <!-- Analysis & Data -->
-                <div class="card skill-card" data-category="analysis">
-                    <i class="fa-solid fa-diagram-project"></i>
+                <!-- Dev Tools -->
+                <div class="skill-bento-card" data-category="tools">
+                    <div class="skill-bento-icon"><i class="devicon-vscode-plain colored"></i></div>
+                    <h3>VS Code</h3>
+                </div>
+                <div class="skill-bento-card" data-category="tools">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>XAMPP</h3>
+                </div>
+                <div class="skill-bento-card skill-wide" data-category="tools">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-file-excel"></i></div>
+                    <div class="skill-bento-info">
+                        <h3>Excel VBA</h3>
+                        <p>Macro Automation</p>
+                    </div>
+                    <div class="skill-bento-glow"></div>
+                </div>
+                <div class="skill-bento-card" data-category="tools">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-diagram-project"></i></div>
                     <h3>UML</h3>
                 </div>
-                <div class="card skill-card" data-category="analysis">
-                    <i class="fa-solid fa-database"></i>
-                    <h3>Basis Data</h3>
-                </div>
-                <div class="card skill-card" data-category="analysis">
-                    <i class="fa-solid fa-sitemap"></i>
+                <div class="skill-bento-card" data-category="tools">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-sitemap"></i></div>
                     <h3>DFD</h3>
                 </div>
 
-                <!-- Creative -->
-                <div class="card skill-card" data-category="creative">
-                    <i class="fa-solid fa-video"></i>
+                <!-- Networking -->
+                <div class="skill-bento-card" data-category="network">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Cisco</h3>
+                </div>
+
+
+                <!-- Design & Creative -->
+                <div class="skill-bento-card" data-category="creative">
+                    <div class="skill-bento-icon"><i class="devicon-figma-plain colored"></i></div>
+                    <h3>Figma</h3>
+                </div>
+                <div class="skill-bento-card" data-category="creative">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Canva</h3>
+                </div>
+                <div class="skill-bento-card" data-category="creative">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-video"></i></div>
                     <h3>Videografi</h3>
                 </div>
-                <div class="card skill-card" data-category="creative">
-                    <i class="fa-solid fa-film"></i>
-                    <h3>Produksi Film Pendek</h3>
+                <div class="skill-bento-card" data-category="creative">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                    <h3>Film Pendek</h3>
+                </div>
+
+                <!-- Productivity -->
+                <div class="skill-bento-card" data-category="productivity">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-table"></i></div>
+                    <h3>Microsoft Excel</h3>
+                </div>
+                <div class="skill-bento-card" data-category="productivity">
+                    <div class="skill-bento-icon"><i class="fa-solid fa-file-word"></i></div>
+                    <h3>Microsoft Word</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="experience section-pad reveal-up">
+        <div class="container">
+            <div class="experience-layout">
+                <div class="experience-header">
+                    <div class="section-chip">Pengalaman</div>
+                    <h2 class="section-heading">Experience &amp; <span class="text-accent">Activities</span></h2>
+                    <div class="filter-tabs filter-tabs-left" id="experience-filter">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="project">Project</button>
+                        <button class="filter-tab" data-filter="academic">Academic</button>
+                    </div>
+                </div>
+                <div class="timeline" id="experience-list">
+                    <div class="timeline-item" data-category="project">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Saat Ini</span>
+                                <span class="timeline-tag">Project</span>
+                            </div>
+                            <h3>Pengembang Proyek</h3>
+                            <h4>WanderMed Digital Map</h4>
+                            <p>Membangun web pelacakan fasilitas kesehatan dengan navigasi rute real-time untuk
+                                Kabupaten Subang.</p>
+                            <div class="timeline-tech">
+                                <span>Laravel</span><span>MySQL</span><span>Maps API</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-category="project academic">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2025</span>
+                                <span class="timeline-tag">Project &bull; Academic</span>
+                            </div>
+                            <h3>Ketua Tim</h3>
+                            <h4>Sistem Manajemen Gudang &mdash; UMKM Wiguna Nusantara</h4>
+                            <p>Memimpin perancangan sistem manajemen inventaris berbasis Excel VBA.</p>
+                            <div class="timeline-tech">
+                                <span>VBA</span><span>Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-category="project">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2025</span>
+                                <span class="timeline-tag">Project</span>
+                            </div>
+                            <h3>Anggota Tim</h3>
+                            <h4>Website Bisnis &mdash; d'bubuy ma'atik</h4>
+                            <p>Membangun arsitektur informasi dan database PHP &amp; MySQL untuk platform pemesanan
+                                makanan tradisional.</p>
+                            <div class="timeline-tech">
+                                <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience animate-on-scroll">
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="achievements section-pad reveal-up">
         <div class="container">
-            <h2 class="section-title text-center">Experience & Activities</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" data-target="experience" data-filter="all">All</button>
-                <button class="filter-btn" data-target="experience" data-filter="academic">Academic</button>
-                <button class="filter-btn" data-target="experience" data-filter="project">Project</button>
+            <div class="section-header-center">
+                <div class="section-chip">Prestasi</div>
+                <h2 class="section-heading">Pencapaian <span class="text-accent">Membanggakan</span></h2>
             </div>
-            <div class="experience-list">
-                <div class="card exp-card horizontal-card" data-category="project">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-map-location-dot"></i>
+            <div class="achievements-grid">
+
+                <!-- Juara 1 -->
+                <div class="achv-card achv-featured">
+                    <div class="achv-top">
+                        <div class="achv-icon"><i class="fa-solid fa-medal"></i></div>
+                        <div class="achv-rank achv-rank-gold">
+                            <i class="fa-solid fa-star"></i> Juara 1
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Pengembang Proyek - WanderMed Digital Map</h3>
-                        <span class="date">Saat Ini</span>
-                        <p>Membangun web pelacakan fasilitas kesehatan dengan navigasi rute real-time.</p>
-                    </div>
-                </div>
-                <div class="card exp-card horizontal-card" data-category="project academic">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Ketua Tim Sistem Manajemen Gudang - UMKM Wiguna Nusantara</h3>
-                        <span class="date">2025</span>
-                        <p>Memimpin perancangan sistem manajemen inventaris berbasis Excel VBA.</p>
-                    </div>
-                </div>
-                <div class="card exp-card horizontal-card" data-category="project">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Anggota Tim Website Bisnis - "d'bubuy ma'atik"</h3>
-                        <span class="date">2025</span>
-                        <p>Membangun arsitektur informasi dan database PHP & MySQL.</p>
+                    <div class="achv-body">
+                        <h3>Kompetisi Film Pendek Internasional</h3>
+                        <div class="achv-subtitle">
+                            <i class="fa-solid fa-clapperboard"></i>
+                            Film Pendek &ldquo;BUNTU&rdquo;
+                        </div>
+                        <p>Drama pendek yang mengangkat isu etika pemanfaatan kecerdasan buatan (AI) di lingkungan akademik, menggambarkan dilema mahasiswa yang terjebak tekanan tugas dan ketergantungan terhadap teknologi secara tidak bertanggung jawab.</p>
+                        <div class="achv-venue">
+                            <i class="fa-solid fa-school"></i> Politeknik Negeri Sambas
+                        </div>
                     </div>
                 </div>
+
+                <!-- Juara 2 -->
+                <div class="achv-card">
+                    <div class="achv-top">
+                        <div class="achv-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="achv-rank achv-rank-silver">
+                            <i class="fa-solid fa-ranking-star"></i> Juara 2
+                        </div>
+                    </div>
+                    <div class="achv-body">
+                        <h3>Subang Innovation Festival</h3>
+                        <div class="achv-subtitle">
+                            <i class="fa-solid fa-file-excel"></i>
+                            Inovasi Sistem Pencatatan UMKM
+                        </div>
+                        <p>Merancang solusi digitalisasi pencatatan stok barang berbasis Excel VBA untuk meningkatkan efisiensi operasional UMKM Wiguna Nusantara, menggantikan proses manual yang rentan kesalahan.</p>
+                    </div>
+                </div>
+
+                <!-- Juara Harapan 1 -->
+                <div class="achv-card">
+                    <div class="achv-top">
+                        <div class="achv-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="achv-rank achv-rank-bronze">
+                            <i class="fa-solid fa-ribbon"></i> Juara Harapan 1
+                        </div>
+                    </div>
+                    <div class="achv-body">
+                        <h3>Videografi Nasional</h3>
+                        <div class="achv-subtitle">
+                            <i class="fa-solid fa-video"></i>
+                            Dokumentasi Kuliner Tradisional
+                        </div>
+                        <p>Memproduksi video dokumenter yang mengangkat kekayaan kuliner khas Subang melalui sajian d&rsquo;bubuy ma&rsquo;atik, sebagai upaya pelestarian dan promosi budaya lokal kepada khalayak nasional.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements bg-light animate-on-scroll">
+    <!-- PROJECTS SECTION — Text-Based Cards -->
+    <section id="projects" class="projects section-pad reveal-up">
         <div class="container">
-            <h2 class="section-title text-center">Achievements</h2>
-            <div class="grid-container achievement-grid">
-                <div class="card achievement-card">
-                    <div class="card-icon-center">
-                        <i class="fa-solid fa-medal"></i>
-                    </div>
-                    <h3>Juara 1 Kompetisi Film Pendek Internasional</h3>
-                    <p>Politeknik Negeri Sambas</p>
-                </div>
-                <div class="card achievement-card">
-                    <div class="card-icon-center">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-                    <h3>Juara 2 Subang Innovation Festival</h3>
-                    <p>Sistem Inventaris VBA</p>
-                </div>
-                <div class="card achievement-card">
-                    <div class="card-icon-center">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3>Juara Harapan 1 Videografi Nasional</h3>
-                    <p>Sejarah Lokal Subang</p>
-                </div>
+            <div class="section-header-center">
+                <div class="section-chip">Portofolio</div>
+                <h2 class="section-heading">Featured <span class="text-accent">Projects</span></h2>
             </div>
-        </div>
-    </section>
+            <div class="projects-list">
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects animate-on-scroll">
-        <div class="container">
-            <h2 class="section-title text-center">Featured Projects</h2>
-            <div class="grid-container project-grid">
-                <div class="card project-card">
-                    <img src="img/Wandermed.png" alt="WanderMed Digital Map" class="project-img">
-                    <div class="project-content">
-                        <h3>WanderMed Digital Map</h3>
-                        <p>Platform pemetaan fasilitas kesehatan real-time untuk mendukung pariwisata di Kabupaten Subang.</p>
-                        <div class="badges">
+                <!-- Project 1 — Featured -->
+                <div class="project-list-card project-list-featured">
+                    <div class="project-list-left">
+                        <div class="project-number">01</div>
+                        <div class="project-list-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                    </div>
+                    <div class="project-list-content">
+                        <div class="project-list-header">
+                            <h3>WanderMed Digital Map</h3>
+                            <a href="https://github.com/faresbrilyan/wandermed.git" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <i class="fa-brands fa-github"></i> Lihat Repo
+                            </a>
+                        </div>
+                        <p class="project-list-desc">Platform pemetaan fasilitas kesehatan real-time untuk mendukung
+                            pariwisata di Kabupaten Subang. Wisatawan dapat menemukan rumah sakit, klinik, dan apotek
+                            terdekat lengkap dengan navigasi rute langsung.</p>
+                        <ul class="project-highlights">
+                            <li><i class="fa-solid fa-check"></i> Navigasi rute real-time ke fasilitas kesehatan
+                                terdekat</li>
+                            <li><i class="fa-solid fa-check"></i> Integrasi Google Maps API untuk geolokasi akurat</li>
+                            <li><i class="fa-solid fa-check"></i> Dashboard admin berbasis Laravel untuk manajemen data
+                                fasilitas</li>
+                            <li><i class="fa-solid fa-check"></i> Desain responsif untuk pengguna mobile &amp; desktop
+                            </li>
+                        </ul>
+                        <div class="project-badges">
                             <span class="badge">Laravel</span>
                             <span class="badge">MySQL</span>
                             <span class="badge">Maps API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/faresbrilyan/wandermed.git" target="_blank" class="btn btn-outline btn-sm">Repo</a>
+                            <span class="badge">PHP</span>
                         </div>
                     </div>
                 </div>
-                <div class="card project-card">
-                    <img src="img/dbubuy.png" alt="d'bubuy ma'atik" class="project-img">
-                    <div class="project-content">
-                        <h3>d'bubuy ma'atik</h3>
-                        <p>Platform pemesanan makanan tradisional secara online dengan manajemen inventaris berbasis web.</p>
-                        <div class="badges">
+
+                <!-- Project 2 -->
+                <div class="project-list-card">
+                    <div class="project-list-left">
+                        <div class="project-number">02</div>
+                        <div class="project-list-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="project-list-content">
+                        <div class="project-list-header">
+                            <h3>d'bubuy ma'atik</h3>
+                            <a href="https://github.com/faresbrilyan/Website-Dbubuy.git" target="_blank"
+                                class="btn btn-outline btn-sm">
+                                <i class="fa-brands fa-github"></i> Lihat Repo
+                            </a>
+                        </div>
+                        <p class="project-list-desc">Platform pemesanan makanan tradisional Sunda secara online dengan
+                            sistem manajemen inventaris berbasis web untuk UMKM lokal.</p>
+                        <ul class="project-highlights">
+                            <li><i class="fa-solid fa-check"></i> Sistem pemesanan online dengan keranjang belanja</li>
+                            <li><i class="fa-solid fa-check"></i> Manajemen inventaris dan stok produk real-time</li>
+                            <li><i class="fa-solid fa-check"></i> Arsitektur database relasional MySQL yang terstruktur
+                            </li>
+                        </ul>
+                        <div class="project-badges">
                             <span class="badge">PHP</span>
                             <span class="badge">MySQL</span>
                             <span class="badge">Bootstrap</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/faresbrilyan/Website-Dbubuy.git" target="_blank" class="btn btn-outline btn-sm">Repo</a>
-                        </div>
                     </div>
                 </div>
-                <div class="card project-card">
-                    <div class="project-img-container">
-                        <img src="img/COMFY.png" alt="Comfy - C System" class="project-img">
+
+                <!-- Project 3 -->
+                <div class="project-list-card">
+                    <div class="project-list-left">
+                        <div class="project-number">03</div>
+                        <div class="project-list-icon">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Comfy - C System</h3>
-                        <p>Sistem Informasi Pendataan Stok Barang Berbasis VBA di UMKM Wiguna Nusantara.</p>
-                        <div class="badges">
+                    <div class="project-list-content">
+                        <div class="project-list-header">
+                            <h3>Comfy &mdash; C System</h3>
+                            <a href="assets/COMFY%20-%20C%20SYSTEM.xlsm" download class="btn btn-outline btn-sm">
+                                <i class="fa-solid fa-download"></i> Download Excel
+                            </a>
+                        </div>
+                        <p class="project-list-desc">Sistem Informasi Pendataan Stok Barang Berbasis VBA di UMKM Wiguna
+                            Nusantara. Mengotomasi proses pencatatan dan pelaporan inventaris gudang secara efisien.</p>
+                        <ul class="project-highlights">
+                            <li><i class="fa-solid fa-check"></i> Input data stok otomatis dengan form interaktif VBA
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Laporan stok barang &amp; bahan baku secara otomatis
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Dashboard ringkasan inventaris dengan validasi data
+                            </li>
+                        </ul>
+                        <div class="project-badges">
                             <span class="badge">VBA</span>
                             <span class="badge">Excel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="assets/COMFY%20-%20C%20SYSTEM.xlsm" download class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download Excel</a>
+                            <span class="badge">Macro</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact bg-light animate-on-scroll">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact section-pad reveal-up">
         <div class="container">
-            <h2 class="section-title text-center">Hubungi Saya</h2>
-            <div class="contact-container">
-                <div class="card contact-card">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <div class="section-chip">Kontak</div>
+                    <h2 class="section-heading">Mari <span class="text-accent">Berkolaborasi</span></h2>
+                    <p class="contact-desc">Tertarik bekerja sama atau punya pertanyaan? Saya siap mendengar dan
+                        berdiskusi.</p>
+                    <div class="contact-links">
+                        <a href="mailto:brilyannfaresya02@gmail.com" class="contact-link-item">
+                            <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div class="contact-link-label">Email</div>
+                                <div class="contact-link-value">brilyannfaresya02@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/frsybrlyn" target="_blank" class="contact-link-item">
+                            <div class="contact-link-icon"><i class="fa-brands fa-instagram"></i></div>
+                            <div>
+                                <div class="contact-link-label">Instagram</div>
+                                <div class="contact-link-value">@frsybrlyn</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/faresbrilyan" target="_blank" class="contact-link-item">
+                            <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+                            <div>
+                                <div class="contact-link-label">GitHub</div>
+                                <div class="contact-link-value">faresbrilyan</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap">
                     <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap Anda">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Alamat Email Anda</label>
-                            <input type="email" id="email" name="email" required placeholder="nama@perusahaan.com">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" required placeholder="Nama Anda">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="nama@email.com">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subjek</label>
-                            <input type="text" id="subject" name="subject" required value="Pengajuan Kerja Sama dan Kolaborasi">
+                            <input type="text" id="subject" name="subject" required
+                                value="Pengajuan Kerja Sama dan Kolaborasi">
                         </div>
                         <div class="form-group">
-                            <label for="message">Pesan Kerja Sama</label>
-                            <textarea id="message" name="message" rows="6" required>Halo Faresya Brilyan Dwiputra,
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required>Halo Faresya Brilyan Dwiputra,
 
 Saya tertarik untuk bekerja sama dan berkolaborasi dengan Anda dalam proyek...</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-submit">
-                            <i class="fa-solid fa-paper-plane"></i> Kirim Pesan via Email
+                            <i class="fa-solid fa-paper-plane"></i> Kirim via Email
                         </button>
                     </form>
                 </div>
@@ -301,21 +606,37 @@ Saya tertarik untuk bekerja sama dan berkolaborasi dengan Anda dalam proyek...</
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container text-center">
-            <h2>Tertarik berkolaborasi atau melihat proyek lainnya?</h2>
-            
-            <div class="footer-socials">
-                <a href="https://github.com/faresbrilyan" target="_blank" class="social-icon-footer"><i class="fa-brands fa-github"></i></a>
-                <a href="https://instagram.com/frsybrlyn" target="_blank" class="social-icon-footer"><i class="fa-brands fa-instagram"></i></a>
-                <a href="mailto:brilyannfaresya02@gmail.com" class="social-icon-footer"><i class="fa-solid fa-envelope"></i></a>
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-brand">
+                    <span class="logo">FRSY<span class="logo-dot">.</span></span>
+                    <p>Faresya Brilyan Dwiputra</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/faresbrilyan" target="_blank" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://instagram.com/frsybrlyn" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:brilyannfaresya02@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
             </div>
-            <p class="mt-4" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">&copy; 2026 Faresya Brilyan Dwiputra. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Faresya Brilyan Dwiputra. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>
+
 </html>

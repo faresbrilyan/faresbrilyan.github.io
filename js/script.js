@@ -1,228 +1,201 @@
-// js/script.js
+// js/script.js — Eco-Tech Professional SPA Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Starfield Animation ---
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-    const starCount = 150;
 
-    const resizeCanvas = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        initStars();
-    };
+    // ===== PRELOADER =====
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, 2600);
+    }
 
-    const initStars = () => {
-        stars = [];
-        for (let i = 0; i < starCount; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 2,
-                speed: Math.random() * 0.5 + 0.1,
-                opacity: Math.random()
-            });
-        }
-    };
-
-    const drawStars = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#FFFFFF';
-        
-        stars.forEach(star => {
-            ctx.globalAlpha = star.opacity;
-            ctx.beginPath();
-            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // Move star
-            star.y -= star.speed;
-            if (star.y < 0) {
-                star.y = canvas.height;
-                star.x = Math.random() * canvas.width;
+    // ===== BACKGROUND DOTS PARALLAX (desktop only) =====
+    const bgDots = document.getElementById('bg-dots');
+    if (bgDots) {
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768) {
+                bgDots.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+            } else {
+                bgDots.style.transform = 'none';
             }
-        });
-        
-        requestAnimationFrame(drawStars);
-    };
+        }, { passive: true });
+    }
 
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    drawStars();
-
-    // --- Custom Cursor Glow ---
+    // ===== CURSOR GLOW (desktop only) =====
     const cursorGlow = document.querySelector('.cursor-glow');
     document.addEventListener('mousemove', (e) => {
-        if (cursorGlow) {
+        if (cursorGlow && window.innerWidth >= 768) {
             cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
+            cursorGlow.style.top  = e.clientY + 'px';
         }
-    });
+    }, { passive: true });
 
-    // --- Hero Mouse Parallax ---
-    const hero = document.querySelector('.hero');
+    // ===== HERO MOUSE PARALLAX (desktop only) =====
+    const hero    = document.querySelector('.hero');
     const heroImg = document.querySelector('.hero-img');
-    const glowSphere = document.querySelector('.glow-sphere');
+    const heroAura = document.querySelector('.hero-img-aura');
 
     if (hero) {
         hero.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const x = (clientX / window.innerWidth - 0.5) * 30;
-            const y = (clientY / window.innerHeight - 0.5) * 30;
+            if (window.innerWidth < 768) return;
+            const x = (e.clientX / window.innerWidth  - 0.5) * 22;
+            const y = (e.clientY / window.innerHeight - 0.5) * 22;
+            if (heroImg)  heroImg.style.transform  = `translate(${x}px, ${y}px) rotateX(${-y / 2}deg) rotateY(${x / 2}deg)`;
+            if (heroAura) heroAura.style.transform = `translate(${-x * 0.6}px, ${-y * 0.6}px)`;
+        }, { passive: true });
 
-            if (heroImg) heroImg.style.transform = `translate(${x}px, ${y}px) rotateX(${-y/2}deg) rotateY(${x/2}deg)`;
-            if (glowSphere) glowSphere.style.transform = `translate(${-x}px, ${-y}px)`;
+        hero.addEventListener('mouseleave', () => {
+            if (heroImg)  heroImg.style.transform  = '';
+            if (heroAura) heroAura.style.transform = '';
         });
     }
 
-    // --- Smooth Scrolling ---
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 120;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-                
-                navLinks.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
+    // ===== NAVBAR: Sticky Class + Smooth Scroll + Active Link =====
+    const navbar   = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
 
-    // Update active nav link on scroll
     window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section');
-        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (scrollPos >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
+        const scrollY = window.scrollY;
 
+        // Sticky class
+        if (navbar) {
+            navbar.classList.toggle('scrolled', scrollY > 80);
+        }
+
+        // Active link tracking
+        let current = '';
+        sections.forEach(sec => {
+            if (scrollY >= sec.offsetTop - 200) current = sec.id;
+        });
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
+            if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
         });
+    }, { passive: true });
 
-        // Sticky Navbar effect
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (scrollPos > 100) {
-                navbar.style.padding = '0.5rem 2rem';
-                navbar.style.background = 'rgba(10, 15, 28, 0.9)';
-            } else {
-                navbar.style.padding = '0.75rem 2rem';
-                navbar.style.background = 'var(--glass-bg)';
-            }
-        }
+    // Smooth scroll on nav click
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+            window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            // Close mobile menu if open
+            navLinksContainer && navLinksContainer.classList.remove('open');
+            mobileMenuBtn && mobileMenuBtn.classList.remove('open');
+        });
     });
 
-    // --- Filtering Functionality ---
-    const setupFiltering = (sectionId, cardSelector) => {
-        const section = document.getElementById(sectionId);
-        if (!section) return;
-        
-        const filterBtns = section.querySelectorAll('.filter-btn');
-        const cards = section.querySelectorAll(cardSelector);
-        
-        filterBtns.forEach(btn => {
+    // ===== MOBILE MENU =====
+    const mobileMenuBtn     = document.getElementById('mobile-menu-btn');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    if (mobileMenuBtn && navLinksContainer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('open');
+            mobileMenuBtn.classList.toggle('open');
+        });
+    }
+
+    // ===== SCROLL REVEAL (IntersectionObserver) =====
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right')
+        .forEach(el => revealObserver.observe(el));
+
+    // ===== STAGGERED CHILD REVEAL =====
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const children = entry.target.querySelectorAll('.stagger-child');
+                children.forEach((child, i) => {
+                    setTimeout(() => child.classList.add('visible'), i * 80);
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.skills-bento, .achievements-bento, .projects-bento, .timeline')
+        .forEach(el => {
+            // Wrap immediate children in stagger class
+            Array.from(el.children).forEach(child => {
+                child.classList.add('stagger-child');
+            });
+            staggerObserver.observe(el);
+        });
+
+    // ===== SKILLS FILTER =====
+    const setupFilter = (filterId, targetSelector) => {
+        const filterContainer = document.getElementById(filterId);
+        if (!filterContainer) return;
+
+        const buttons = filterContainer.querySelectorAll('.filter-tab');
+        const cards   = document.querySelectorAll(targetSelector);
+
+        buttons.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
+                buttons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
-                const filterValue = btn.getAttribute('data-filter');
-                
+
+                const filter = btn.getAttribute('data-filter');
+
                 cards.forEach(card => {
-                    card.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                    if (filterValue === 'all') {
+                    const categories = (card.dataset.category || '').split(' ');
+                    const show = filter === 'all' || categories.includes(filter);
+
+                    card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                    if (show) {
                         card.classList.remove('hidden');
-                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
+                        requestAnimationFrame(() => {
+                            card.style.opacity   = '1';
+                            card.style.transform = '';
+                        });
                     } else {
-                        const categories = (card.getAttribute('data-category') || '').split(' ');
-                        if (categories.includes(filterValue)) {
-                            card.classList.remove('hidden');
-                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.9)';
-                            setTimeout(() => card.classList.add('hidden'), 400);
-                        }
+                        card.style.opacity   = '0';
+                        card.style.transform = 'scale(0.92)';
+                        setTimeout(() => card.classList.add('hidden'), 350);
                     }
                 });
             });
         });
     };
 
-    setupFiltering('skills', '.skill-card');
-    setupFiltering('experience', '.exp-card');
+    setupFilter('skills-filter', '.skill-bento-card');
+    setupFilter('experience-filter', '.timeline-item');
 
-    // --- Scroll Animations ---
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
-    // --- Mobile Menu Toggle ---
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const navLinksContainer = document.querySelector('.nav-links');
-
-    if (mobileMenuBtn && navLinksContainer) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('show-menu');
-        });
-
-        navLinksContainer.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinksContainer.classList.remove('show-menu');
-            });
-        });
-    }
-
-    // --- Contact Form Submission ---
+    // ===== CONTACT FORM — mailto handler =====
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            const mailtoBody = `${message}\n\n---\nPengirim: ${name}\nEmail: ${email}`;
-            const mailtoUrl = `mailto:brilyannfaresya02@gmail.com` +
-                              `?subject=${encodeURIComponent(subject)}` +
-                              `&body=${encodeURIComponent(mailtoBody)}`;
-            
-            window.location.href = mailtoUrl;
+            const name    = document.getElementById('name').value.trim();
+            const email   = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const body = `${message}\n\n---\nPengirim: ${name}\nEmail: ${email}`;
+            const url  = `mailto:brilyannfaresya02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = url;
         });
     }
+
+    // ===== FOOTER LINKS SMOOTH SCROLL =====
+    document.querySelectorAll('.footer-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+        });
+    });
+
 });
-
-
