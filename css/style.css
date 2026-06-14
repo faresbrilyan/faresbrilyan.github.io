@@ -220,7 +220,10 @@ button { font-family: var(--font-body); }
     border-radius: 5rem;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
-    transition: top var(--dur-fast), box-shadow var(--dur-fast), background var(--dur-fast);
+    transition: top var(--dur-fast), box-shadow var(--dur-fast), background var(--dur-fast), border-radius var(--dur-fast) var(--ease-spring);
+}
+.navbar.menu-open {
+    border-radius: var(--radius-md);
 }
 .navbar.scrolled {
     top: 0.75rem;
@@ -856,6 +859,7 @@ button { font-family: var(--font-body); }
 }
 
 @media (max-width: 768px) {
+    .container { padding: 0 1.25rem; }
     .section-pad { padding: 5rem 0; }
     .section-heading { font-size: 1.85rem; }
 
@@ -873,19 +877,22 @@ button { font-family: var(--font-body); }
     .hero { padding: 8rem 1.5rem 4rem; }
     .hero-heading { font-size: clamp(2.5rem, 10vw, 3.5rem); }
     .hero-img-frame { width: 280px; height: 280px; }
+    .hero-img-ring-1 { inset: -15px; }
+    .hero-img-ring-2 { inset: -30px; }
     .badge-top, .badge-bottom { display: none; }
     .scroll-indicator { display: none; }
 
     .skills-bento { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-    .skill-bento-card.skill-wide { grid-column: span 2; }
+    .skill-bento-card { padding: 1rem; min-height: 110px; }
+    .skill-bento-card.skill-wide { padding: 1rem 1.25rem; min-height: 90px; grid-column: span 2; }
 
     .timeline { padding-left: 1.5rem; }
-    .timeline-dot { left: -2.35rem; width: 36px; height: 36px; font-size: 0.9rem; }
+    .timeline-dot { left: -2.625rem; width: 36px; height: 36px; font-size: 0.9rem; }
 
     .achievements-grid { grid-template-columns: 1fr; }
-    .achv-featured { order: -1; }
+    .achv-featured { order: -1; grid-column: span 1; }
 
-    .project-list-card { flex-direction: column; padding: 1.5rem; gap: 1rem; }
+    .project-list-card { flex-direction: column; padding: 1.25rem; gap: 1rem; }
     .project-list-left { flex-direction: row; align-items: center; }
     .project-list-header { flex-direction: column; align-items: flex-start; }
 
@@ -898,8 +905,11 @@ button { font-family: var(--font-body); }
 @media (max-width: 480px) {
     .hero-actions { flex-direction: column; }
     .btn { width: 100%; }
+    .hero-img-ring { display: none; }
     .about-actions { flex-direction: column; align-items: flex-start; }
-    .skills-bento { grid-template-columns: repeat(2, 1fr); }
-    .skill-bento-card.skill-wide { grid-column: span 2; }
+    .about-stats-bento { grid-template-columns: 1fr; }
+    .skills-bento { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .skill-bento-card { padding: 0.85rem; min-height: 100px; }
+    .skill-bento-card.skill-wide { padding: 0.85rem 1rem; min-height: 80px; grid-column: span 2; }
     .filter-tab { font-size: 0.8rem; padding: 0.5rem 1rem; }
 }

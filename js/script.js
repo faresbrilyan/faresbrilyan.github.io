@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close mobile menu if open
             navLinksContainer && navLinksContainer.classList.remove('open');
             mobileMenuBtn && mobileMenuBtn.classList.remove('open');
+            navbar && navbar.classList.remove('menu-open');
         });
     });
 
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', () => {
             navLinksContainer.classList.toggle('open');
             mobileMenuBtn.classList.toggle('open');
+            if (navbar) navbar.classList.toggle('menu-open');
         });
     }
 
