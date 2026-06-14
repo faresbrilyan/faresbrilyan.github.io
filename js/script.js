@@ -2,12 +2,81 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== PRELOADER =====
-    const preloader = document.getElementById('preloader');
+    // ===== PRELOADER: Terminal & Decryption Effect =====
+    const preloader       = document.getElementById('preloader');
+    const preloaderLogo   = document.getElementById('preloader-logo');
+    const preloaderBar    = document.getElementById('preloader-bar');
+    const preloaderPercent = document.getElementById('preloader-percent');
+    const terminalConsole = document.getElementById('terminal-console');
+
     if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-        }, 2600);
+        let progress = 0;
+        const totalDuration = 2500; // 2.5 seconds total
+        const intervalTime = 30; // update speed
+        const steps = totalDuration / intervalTime;
+        const increment = 100 / steps;
+
+        // Terminal logs
+        const logs = [
+            { threshold: 0,   text: '> initializing_core_matrix...' },
+            { threshold: 25,  text: '> establishing_creative_modules...' },
+            { threshold: 50,  text: '> loading_experience_database...' },
+            { threshold: 75,  text: '> launching_portfolio_interface...' },
+            { threshold: 100, text: '> system_ready. booting_interface...' }
+        ];
+        
+        let activeLogIndex = -1;
+
+        const updatePreloader = () => {
+            progress = Math.min(progress + increment + Math.random() * 0.8, 100);
+            
+            // 1. Update Progress Bar & Percentage
+            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
+            if (preloaderPercent) preloaderPercent.textContent = `${Math.floor(progress)}%`;
+
+            // 2. FRSY Decryption Animation Stages
+            let logoText = '£314';
+            if (progress >= 80) {
+                logoText = 'FRSY.';
+            } else if (progress >= 60) {
+                logoText = 'FRS£';
+            } else if (progress >= 40) {
+                logoText = 'FR&£';
+            } else if (progress >= 20) {
+                logoText = 'F(*"3';
+            }
+            if (preloaderLogo) preloaderLogo.textContent = logoText;
+
+            // 3. Update Terminal Console Logs
+            logs.forEach((log, index) => {
+                if (progress >= log.threshold && index > activeLogIndex) {
+                    activeLogIndex = index;
+                    
+                    // Remove active cursor from previous lines
+                    const activeLines = terminalConsole.querySelectorAll('.console-line');
+                    activeLines.forEach(l => l.classList.remove('active'));
+
+                    // Create new console line
+                    const line = document.createElement('div');
+                    line.className = 'console-line active';
+                    line.textContent = log.text;
+                    terminalConsole.appendChild(line);
+                    
+                    // Auto scroll console
+                    terminalConsole.scrollTop = terminalConsole.scrollHeight;
+                }
+            });
+
+            // 4. Complete Sequence
+            if (progress >= 100) {
+                clearInterval(loaderInterval);
+                setTimeout(() => {
+                    preloader.classList.add('fade-out');
+                }, 400);
+            }
+        };
+
+        const loaderInterval = setInterval(updatePreloader, intervalTime);
     }
 
     // ===== BACKGROUND DOTS PARALLAX (desktop only) =====
