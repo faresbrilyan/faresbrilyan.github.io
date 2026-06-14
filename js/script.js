@@ -47,23 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (preloaderLogo) preloaderLogo.textContent = logoText;
 
-            // 3. Update Terminal Console Logs
+            // 3. Update Terminal Console Log (Single Line Replacement)
             logs.forEach((log, index) => {
                 if (progress >= log.threshold && index > activeLogIndex) {
                     activeLogIndex = index;
-                    
-                    // Remove active cursor from previous lines
-                    const activeLines = terminalConsole.querySelectorAll('.console-line');
-                    activeLines.forEach(l => l.classList.remove('active'));
-
-                    // Create new console line
-                    const line = document.createElement('div');
-                    line.className = 'console-line active';
-                    line.textContent = log.text;
-                    terminalConsole.appendChild(line);
-                    
-                    // Auto scroll console
-                    terminalConsole.scrollTop = terminalConsole.scrollHeight;
+                    const consoleLine = document.getElementById('terminal-console-line');
+                    if (consoleLine) {
+                        consoleLine.textContent = log.text;
+                    }
                 }
             });
 
