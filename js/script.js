@@ -1,74 +1,74 @@
-// js/script.js — Eco-Tech Professional SPA Portfolio
+// js/script.js — Faresya Brilyan Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== PRELOADER: Terminal & Decryption Effect =====
-    const preloader       = document.getElementById('preloader');
-    const preloaderLogo   = document.getElementById('preloader-logo');
-    const preloaderBar    = document.getElementById('preloader-bar');
-    const preloaderPercent = document.getElementById('preloader-percent');
-    const terminalConsole = document.getElementById('terminal-console');
+    // ===== OPENING GATE — Elegant Cinematic Intro =====
+    const preloader     = document.getElementById('preloader');
+    const logoWrap      = document.getElementById('gate-logo-wrap');
+    const gateBrand     = document.getElementById('gate-brand');
+    const sweepLine     = document.getElementById('gate-sweep-line');
+    const tagline       = document.getElementById('gate-tagline');
+    const taglineText   = document.getElementById('gate-tagline-text');
+    const progressBar   = document.getElementById('gate-progress-bar');
 
     if (preloader) {
-        let progress = 0;
-        const totalDuration = 2500; // 2.5 seconds total
-        const intervalTime = 30; // update speed
-        const steps = totalDuration / intervalTime;
-        const increment = 100 / steps;
+        // --- Phase 1: Stagger elements in ---
+        setTimeout(() => logoWrap  && logoWrap.classList.add('animate-in'),   80);
+        setTimeout(() => gateBrand && gateBrand.classList.add('animate-in'),  80);
+        setTimeout(() => sweepLine && sweepLine.classList.add('animate'),      800);
+        setTimeout(() => tagline   && tagline.classList.add('animate-in'),     1150);
 
-        // Terminal logs
-        const logs = [
-            { threshold: 0,   text: '> initializing_core_matrix...' },
-            { threshold: 25,  text: '> establishing_creative_modules...' },
-            { threshold: 50,  text: '> loading_experience_database...' },
-            { threshold: 75,  text: '> launching_portfolio_interface...' },
-            { threshold: 100, text: '> system_ready. booting_interface...' }
-        ];
-        
-        let activeLogIndex = -1;
+        // --- Phase 2: Typewriter tagline ---
+        const taglineStr = 'building_systems • crafting_experiences';
+        let charIdx = 0;
+        const typeSpeed = 38; // ms per char
+        const typeDelay = 1300;
 
-        const updatePreloader = () => {
-            progress = Math.min(progress + increment + Math.random() * 0.8, 100);
-            
-            // 1. Update Progress Bar & Percentage
-            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
-            if (preloaderPercent) preloaderPercent.textContent = `${Math.floor(progress)}%`;
-
-            // 2. FRSY Decryption Animation Stages
-            let logoText = '£314';
-            if (progress >= 80) {
-                logoText = 'FRSY.';
-            } else if (progress >= 60) {
-                logoText = 'FRS£';
-            } else if (progress >= 40) {
-                logoText = 'FR&£';
-            } else if (progress >= 20) {
-                logoText = 'F(*"3';
-            }
-            if (preloaderLogo) preloaderLogo.textContent = logoText;
-
-            // 3. Update Terminal Console Log (Single Line Replacement)
-            logs.forEach((log, index) => {
-                if (progress >= log.threshold && index > activeLogIndex) {
-                    activeLogIndex = index;
-                    const consoleLine = document.getElementById('terminal-console-line');
-                    if (consoleLine) {
-                        consoleLine.textContent = log.text;
-                    }
-                }
-            });
-
-            // 4. Complete Sequence
-            if (progress >= 100) {
-                clearInterval(loaderInterval);
-                setTimeout(() => {
-                    preloader.classList.add('fade-out');
-                }, 400);
+        const typewriter = () => {
+            if (!taglineText) return;
+            if (charIdx < taglineStr.length) {
+                taglineText.textContent += taglineStr[charIdx++];
+                setTimeout(typewriter, typeSpeed);
             }
         };
+        setTimeout(typewriter, typeDelay);
 
-        const loaderInterval = setInterval(updatePreloader, intervalTime);
+        // --- Phase 3: Progress bar fills to 100% ---
+        let progress = 0;
+        const totalMs   = 2600; // total preloader duration
+        const tickMs    = 30;
+        const baseIncrement = 100 / (totalMs / tickMs);
+
+        const tickProgress = setInterval(() => {
+            // Ease-in: faster start, slower near end
+            const eased = progress < 70
+                ? baseIncrement * (1 + Math.random() * 0.6)
+                : baseIncrement * (0.35 + Math.random() * 0.2);
+            progress = Math.min(progress + eased, 100);
+            if (progressBar) progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(tickProgress);
+                triggerExit();
+            }
+        }, tickMs);
+
+        // --- Phase 4: Curtain split exit ---
+        const triggerExit = () => {
+            setTimeout(() => {
+                preloader.classList.add('gate-exit');
+                // After curtain animation finishes, hide fully
+                setTimeout(() => {
+                    preloader.classList.add('gate-hidden');
+                    document.body.style.overflow = '';
+                }, 800);
+            }, 300);
+        };
+
+        // Lock scroll while gate is open
+        document.body.style.overflow = 'hidden';
     }
+
 
     // ===== BACKGROUND DOTS PARALLAX (desktop only) =====
     const bgDots = document.getElementById('bg-dots');
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skills-bento, .achievements-bento, .projects-bento, .timeline')
+    document.querySelectorAll('.skills-bento, .achievements-grid, .projects-list, .timeline')
         .forEach(el => {
             // Wrap immediate children in stagger class
             Array.from(el.children).forEach(child => {
