@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faresya Brilyan — Information Systems &amp; Web Developer</title>
     <meta name="description"
-        content="Portfolio Faresya Brilyan Dwiputra — Mahasiswa Sistem Informasi & Web Developer. Membangun sistem web fungsional, platform geospasial, dan perkakas data teruji.">
+        content="Portfolio Faresya Brilyan Dwiputra — Mahasiswa D3 Sistem Informasi Polsub &amp; Web Developer. Fokus pada perancangan direktori geospasial, sistem web fungsional, dan automasi data.">
+    <meta name="author" content="Faresya Brilyan Dwiputra">
+    <meta name="theme-color" content="#09090b">
+    <link rel="canonical" href="https://faresbrilyan.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faresbrilyan.github.io/">
+    <meta property="og:title" content="Faresya Brilyan — Information Systems &amp; Web Developer">
+    <meta property="og:description" content="Portfolio Faresya Brilyan Dwiputra — Sistem web fungsional, platform geospasial, dan perkakas data teruji.">
+    <meta property="og:image" content="https://faresbrilyan.github.io/img/Pas%20Foto.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faresya Brilyan — Information Systems &amp; Web Developer">
+    <meta name="twitter:description" content="Portfolio Faresya Brilyan Dwiputra — Sistem web fungsional, platform geospasial, dan perkakas data teruji.">
+    <meta name="twitter:image" content="https://faresbrilyan.github.io/img/Pas%20Foto.png">
     <!-- Google Fonts: Plus Jakarta Sans, Inter, & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +32,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Devicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -150,7 +166,7 @@
             <div class="hero-visual reveal-right">
                 <div class="hero-img-frame">
                     <div class="hero-img-aura"></div>
-                    <img src="img/Pas Foto.png" alt="Faresya Brilyan Dwiputra" class="hero-img">
+                    <img src="img/Pas Foto.png" alt="Faresya Brilyan Dwiputra" class="hero-img" width="320" height="320" fetchpriority="high" decoding="async">
                     <div class="hero-img-ring hero-img-ring-1"></div>
                     <div class="hero-img-ring hero-img-ring-2"></div>
                 </div>
@@ -262,12 +278,12 @@
                 <h2 class="section-heading">Skills &amp; <span class="text-accent">Tech Stack</span></h2>
             </div>
 
-            <div class="filter-tabs" id="skills-filter">
-                <button class="filter-tab active font-mono" data-filter="all">Semua</button>
-                <button class="filter-tab font-mono" data-filter="web">Web &amp; Framework</button>
-                <button class="filter-tab font-mono" data-filter="tools">Tools &amp; DB</button>
-                <button class="filter-tab font-mono" data-filter="creative">Creative &amp; Media</button>
-                <button class="filter-tab font-mono" data-filter="productivity">Productivity</button>
+            <div class="filter-tabs" id="skills-filter" role="tablist" aria-label="Kategori Keahlian">
+                <button class="filter-tab active font-mono" role="tab" aria-selected="true" data-filter="all">Semua</button>
+                <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="web">Web &amp; Framework</button>
+                <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="tools">Tools &amp; DB</button>
+                <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="creative">Creative &amp; Media</button>
+                <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="productivity">Productivity</button>
             </div>
 
             <div class="skills-bento" id="skills-grid">
@@ -323,7 +339,22 @@
                 </div>
 
                 <div class="skill-bento-card" data-category="tools">
-                    <div class="skill-bento-icon"><i class="devicon-supabase-plain colored"></i></div>
+                    <div class="skill-bento-icon">
+                        <svg class="supabase-svg" viewBox="0 0 109 113" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Supabase Logo">
+                            <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9709 107.314L53.974 49.5635H98.0734C104.912 49.5635 108.694 57.4412 104.372 62.7578L63.7076 110.284Z" fill="url(#sb-linear-1)"/>
+                            <path d="M45.317 2.70064C48.1765 -0.900244 53.9744 1.07297 54.0537 5.67069L54.4533 63.4215H10.9513C4.11234 63.4215 0.330756 55.5438 4.65287 50.2272L45.317 2.70064Z" fill="url(#sb-linear-2)"/>
+                            <defs>
+                                <linearGradient id="sb-linear-1" x1="53.974" y1="49.5635" x2="89.2638" y2="93.8824" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#249361"/>
+                                    <stop offset="1" stop-color="#3ECF8E"/>
+                                </linearGradient>
+                                <linearGradient id="sb-linear-2" x1="4.4447" y1="52.2706" x2="54.4533" y2="52.2706" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3ECF8E"/>
+                                    <stop offset="1" stop-color="#249361"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <h3>Supabase</h3>
                 </div>
 
@@ -399,14 +430,34 @@
                 <div class="experience-header">
                     <div class="section-chip font-mono">TIMELINE &amp; TRACK RECORD</div>
                     <h2 class="section-heading">Experience &amp; <span class="text-accent">Activities</span></h2>
-                    <div class="filter-tabs filter-tabs-left" id="experience-filter">
-                        <button class="filter-tab active font-mono" data-filter="all">All</button>
-                        <button class="filter-tab font-mono" data-filter="project">Project</button>
-                        <button class="filter-tab font-mono" data-filter="academic">Academic</button>
+                    <div class="filter-tabs filter-tabs-left" id="experience-filter" role="tablist" aria-label="Kategori Pengalaman">
+                        <button class="filter-tab active font-mono" role="tab" aria-selected="true" data-filter="all">All</button>
+                        <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="internship">Internship</button>
+                        <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="project">Project</button>
+                        <button class="filter-tab font-mono" role="tab" aria-selected="false" data-filter="academic">Academic</button>
                     </div>
                 </div>
                 <div class="timeline" id="experience-list">
-                    <!-- Item 1: WFC Radar -->
+                    <!-- Item 1: PT Herlina Indah (Enesis Group) -->
+                    <div class="timeline-item" data-category="internship">
+                        <div class="timeline-dot">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date font-mono">AGU 2026 &ndash; JAN 2027 &bull; CURRENT</span>
+                                <span class="timeline-tag font-mono">Corporate Internship</span>
+                            </div>
+                            <h3>Information Systems &amp; IT Intern</h3>
+                            <h4>PT Herlina Indah &mdash; Enesis Group</h4>
+                            <p>Melaksanakan program magang industri di PT Herlina Indah (Enesis Group), berkontribusi dalam operasional dan pengembangan sistem informasi internal, automasi pengolahan data alur kerja perusahaan, serta digitalisasi proses bisnis operasional.</p>
+                            <div class="timeline-tech font-mono">
+                                <span>Information Systems</span><span>Business Process</span><span>Data Processing</span><span>Database</span><span>Office Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: WFC Radar -->
                     <div class="timeline-item" data-category="project">
                         <div class="timeline-dot">
                             <i class="fa-solid fa-satellite-dish"></i>
@@ -496,7 +547,7 @@
             <div class="achievements-grid">
 
                 <!-- Juara 1 -->
-                <div class="achv-card achv-featured">
+                <div class="achv-card achv-featured" data-modal="achv-1">
                     <div class="achv-top">
                         <div class="achv-icon"><i class="fa-solid fa-medal"></i></div>
                         <div class="achv-rank achv-rank-gold font-mono">
@@ -509,15 +560,20 @@
                             <i class="fa-solid fa-clapperboard text-emerald"></i>
                             Karya Film Pendek &ldquo;BUNTU&rdquo;
                         </div>
-                        <p>Drama pendek yang mengangkat isu etika pemanfaatan kecerdasan buatan (AI) di lingkungan akademik, menggambarkan dilema mahasiswa yang terjebak tekanan tugas dan ketergantungan terhadap teknologi secara tidak bertanggung jawab.</p>
                         <div class="achv-venue font-mono">
                             <i class="fa-solid fa-landmark"></i> Politeknik Negeri Sambas
                         </div>
                     </div>
+                    <div class="achv-footer">
+                        <button type="button" class="btn-achv-detail font-mono" data-modal="achv-1">
+                            <span>Detail Prestasi</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Juara 2 -->
-                <div class="achv-card">
+                <div class="achv-card" data-modal="achv-2">
                     <div class="achv-top">
                         <div class="achv-icon"><i class="fa-solid fa-trophy"></i></div>
                         <div class="achv-rank achv-rank-silver font-mono">
@@ -530,15 +586,20 @@
                             <i class="fa-solid fa-file-excel text-emerald"></i>
                             Inovasi Sistem Pencatatan UMKM
                         </div>
-                        <p>Merancang solusi digitalisasi pencatatan stok barang berbasis Excel VBA Macro untuk meningkatkan efisiensi operasional UMKM Wiguna Nusantara, menggantikan proses manual yang rentan kesalahan data.</p>
                         <div class="achv-venue font-mono">
                             <i class="fa-solid fa-city"></i> Pemerintah Kabupaten Subang
                         </div>
                     </div>
+                    <div class="achv-footer">
+                        <button type="button" class="btn-achv-detail font-mono" data-modal="achv-2">
+                            <span>Detail Prestasi</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Juara Harapan 1 -->
-                <div class="achv-card">
+                <div class="achv-card" data-modal="achv-3">
                     <div class="achv-top">
                         <div class="achv-icon"><i class="fa-solid fa-award"></i></div>
                         <div class="achv-rank achv-rank-bronze font-mono">
@@ -551,10 +612,15 @@
                             <i class="fa-solid fa-video text-emerald"></i>
                             Dokumentasi Kuliner Tradisional
                         </div>
-                        <p>Memproduksi video dokumenter sinematik yang mengangkat kekayaan kuliner khas Subang melalui sajian d&rsquo;bubuy ma&rsquo;atik, sebagai upaya pelestarian dan promosi budaya lokal kepada khalayak nasional.</p>
                         <div class="achv-venue font-mono">
                             <i class="fa-solid fa-film"></i> Tingkat Nasional
                         </div>
+                    </div>
+                    <div class="achv-footer">
+                        <button type="button" class="btn-achv-detail font-mono" data-modal="achv-3">
+                            <span>Detail Prestasi</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -571,12 +637,12 @@
             </div>
             <div class="projects-list">
 
-                <!-- Project 1 — WFC Radar (Featured) -->
-                <div class="project-list-card project-list-featured">
+                <!-- Project 1 — WFC Radar -->
+                <div class="project-list-card">
                     <div class="project-list-left">
                         <div class="project-number font-mono">CASE_01 // GEOSPATIAL</div>
                         <div class="project-thumb-wrap">
-                            <img src="img/WFC Radar.png" alt="WFC Radar Platform Showcase" class="project-thumb-img">
+                            <img src="img/WFC Radar.png" alt="WFC Radar Platform Showcase" class="project-thumb-img" width="600" height="340" loading="lazy" decoding="async">
                             <span class="project-thumb-badge font-mono">
                                 <span class="badge-radar-dot"></span>
                                 Live Production
@@ -587,31 +653,27 @@
                         <div class="project-list-header">
                             <div>
                                 <span class="project-category-tag font-mono">GEOSPATIAL &bull; REMOTE WORK DIRECTORY</span>
-                                <h3>WFC Radar &mdash; Platform Kurasi Kafe Ramah Kerja</h3>
-                            </div>
-                            <div class="project-cta-group">
-                                <a href="https://wfc-radar.vercel.app" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-primary btn-sm font-mono">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Kunjungi Website
-                                </a>
+                                <h3>WFC Radar &mdash; Direktori Kafe Ramah Kerja</h3>
                             </div>
                         </div>
                         <p class="project-list-desc">
-                            Platform kurasi kafe ramah kerja berbasis geolokasi dengan metrik teknis terverifikasi (kecepatan Wi-Fi nyata, ketersediaan colokan per meja, akustik tingkat kebisingan, dan tipe tempat duduk) untuk remote worker dan mahasiswa.
+                            Platform pencarian ruang kerja berbasis peta interaktif dengan informasi fasilitas seperti Wi-Fi, colokan listrik, dan tingkat kebisingan.
                         </p>
-                        <ul class="project-highlights">
-                            <li><i class="fa-solid fa-circle-check"></i> Peta radar interaktif (Leaflet &amp; OpenStreetMap) dengan filter radius jarak dan deteksi geolokasi</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Metrik fasilitas kerja terverifikasi: ketersediaan colokan listrik, estimasi speedtest Mbps Wi-Fi, akustik suara, &amp; musala</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Formulir crowd-input komunitas dilengkapi deteksi koordinat otomatis dan validasi data titik</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Performa instan berbasis Next.js App Router, TypeScript, dan Tailwind CSS</li>
-                        </ul>
                         <div class="project-badges font-mono">
                             <span class="badge">Next.js</span>
                             <span class="badge">TypeScript</span>
                             <span class="badge">Tailwind CSS</span>
                             <span class="badge">Leaflet</span>
                             <span class="badge">Supabase</span>
-                            <span class="badge">Vercel</span>
+                        </div>
+                        <div class="project-cta-group">
+                            <button type="button" class="btn btn-outline btn-sm font-mono btn-project-detail" data-modal="proj-1">
+                                <i class="fa-solid fa-circle-info"></i> Detail Proyek
+                            </button>
+                            <a href="https://wfc-radar.vercel.app" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm font-mono">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Kunjungi Website
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -621,7 +683,7 @@
                     <div class="project-list-left">
                         <div class="project-number font-mono">CASE_02 // HEALTHCARE GIS</div>
                         <div class="project-thumb-wrap">
-                            <img src="img/Wandermed.png" alt="WanderMed Digital Map Showcase" class="project-thumb-img">
+                            <img src="img/Wandermed.png" alt="WanderMed Digital Map Showcase" class="project-thumb-img" width="600" height="340" loading="lazy" decoding="async">
                             <span class="project-thumb-badge font-mono"><i class="fa-solid fa-map-location-dot"></i> GIS Routing</span>
                         </div>
                     </div>
@@ -629,28 +691,26 @@
                         <div class="project-list-header">
                             <div>
                                 <span class="project-category-tag font-mono">HEALTHCARE &bull; TOURISM NAVIGATION</span>
-                                <h3>WanderMed Digital Map &mdash; Direktori Faskes Darurat</h3>
-                            </div>
-                            <div class="project-cta-group">
-                                <a href="https://github.com/faresbrilyan/wandermed.git" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-outline btn-sm font-mono">
-                                    <i class="fa-brands fa-github"></i> Lihat Repo
-                                </a>
+                                <h3>WanderMed &mdash; Direktori Faskes Darurat</h3>
                             </div>
                         </div>
                         <p class="project-list-desc">
-                            Platform direktori fasilitas kesehatan darurat berbasis rute navigasi real-time untuk wisatawan di Kabupaten Subang dalam menjangkau rumah sakit, klinik, dan apotek terdekat secara instan.
+                            Platform direktori fasilitas kesehatan darurat dengan perhitungan rute navigasi Google Maps untuk wisatawan di Kabupaten Subang.
                         </p>
-                        <ul class="project-highlights">
-                            <li><i class="fa-solid fa-circle-check"></i> Integrasi Google Maps API untuk geolokasi akurat dan navigasi rute tercepat</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Dashboard manajemen data fasilitas kesehatan berbasis backend Laravel</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Kueri database relasional MySQL teroptimasi untuk pencarian faskes radius terdekat</li>
-                        </ul>
                         <div class="project-badges font-mono">
                             <span class="badge">Laravel</span>
                             <span class="badge">Google Maps API</span>
                             <span class="badge">MySQL</span>
                             <span class="badge">PHP</span>
+                        </div>
+                        <div class="project-cta-group">
+                            <button type="button" class="btn btn-outline btn-sm font-mono btn-project-detail" data-modal="proj-2">
+                                <i class="fa-solid fa-circle-info"></i> Detail Proyek
+                            </button>
+                            <a href="https://github.com/faresbrilyan/wandermed.git" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm font-mono">
+                                <i class="fa-brands fa-github"></i> Lihat Repo
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -660,7 +720,7 @@
                     <div class="project-list-left">
                         <div class="project-number font-mono">CASE_03 // INVENTORY AUTOMATION</div>
                         <div class="project-thumb-wrap">
-                            <img src="img/COMFY.png" alt="COMFY C-System Showcase" class="project-thumb-img">
+                            <img src="img/COMFY.png" alt="COMFY C-System Showcase" class="project-thumb-img" width="600" height="340" loading="lazy" decoding="async">
                             <span class="project-thumb-badge font-mono"><i class="fa-solid fa-trophy"></i> Juara 2 Inovasi</span>
                         </div>
                     </div>
@@ -668,26 +728,24 @@
                         <div class="project-list-header">
                             <div>
                                 <span class="project-category-tag font-mono">OPERATIONAL AUTOMATION &bull; UMKM</span>
-                                <h3>Sistem Inventaris Pergudangan &mdash; Comfy C-System</h3>
-                            </div>
-                            <div class="project-cta-group">
-                                <a href="assets/COMFY%20-%20C%20SYSTEM.xlsm" download class="btn btn-outline btn-sm font-mono">
-                                    <i class="fa-solid fa-download"></i> Unduh File Excel
-                                </a>
+                                <h3>Comfy C-System &mdash; Sistem Inventaris Pergudangan</h3>
                             </div>
                         </div>
                         <p class="project-list-desc">
-                            Sistem automasi manajemen stok dan pembukuan internal berbasis Excel VBA Macro untuk efisiensi alur kerja operasional di UMKM Wiguna Nusantara.
+                            Aplikasi pencatatan stok dan pembukuan internal berbasis Excel VBA Macro untuk efisiensi pengelolaan inventaris UMKM Wiguna Nusantara.
                         </p>
-                        <ul class="project-highlights">
-                            <li><i class="fa-solid fa-circle-check"></i> Formulir entri data mutasi stok otomatis dengan validasi logika VBA</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Rekapitulasi otomatis mutasi barang masuk, keluar, dan sisa saldo stok gudang</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Meraih penghargaan Juara 2 pada Subang Innovation Festival 2025</li>
-                        </ul>
                         <div class="project-badges font-mono">
                             <span class="badge">Excel VBA</span>
                             <span class="badge">Macro Logic</span>
-                            <span class="badge">Business Intelligence</span>
+                            <span class="badge">Data Modeling</span>
+                        </div>
+                        <div class="project-cta-group">
+                            <button type="button" class="btn btn-outline btn-sm font-mono btn-project-detail" data-modal="proj-3">
+                                <i class="fa-solid fa-circle-info"></i> Detail Proyek
+                            </button>
+                            <a href="assets/COMFY%20-%20C%20SYSTEM.xlsm" download class="btn btn-primary btn-sm font-mono">
+                                <i class="fa-solid fa-download"></i> Unduh File
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -697,7 +755,7 @@
                     <div class="project-list-left">
                         <div class="project-number font-mono">CASE_04 // LOCAL COMMERCE</div>
                         <div class="project-thumb-wrap">
-                            <img src="img/dbubuy.png" alt="d'bubuy ma'atik Showcase" class="project-thumb-img">
+                            <img src="img/dbubuy.png" alt="d'bubuy ma'atik Showcase" class="project-thumb-img" width="600" height="340" loading="lazy" decoding="async">
                             <span class="project-thumb-badge font-mono"><i class="fa-solid fa-store"></i> E-Commerce</span>
                         </div>
                     </div>
@@ -705,27 +763,25 @@
                         <div class="project-list-header">
                             <div>
                                 <span class="project-category-tag font-mono">UMKM E-COMMERCE &bull; DATABASE</span>
-                                <h3>Platform E-Commerce d'bubuy ma'atik</h3>
-                            </div>
-                            <div class="project-cta-group">
-                                <a href="https://github.com/faresbrilyan/Website-Dbubuy.git" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn-outline btn-sm font-mono">
-                                    <i class="fa-brands fa-github"></i> Lihat Repo
-                                </a>
+                                <h3>d'bubuy ma'atik &mdash; Platform Pemesanan Kuliner UMKM</h3>
                             </div>
                         </div>
                         <p class="project-list-desc">
-                            Platform pemesanan kuliner khas Sunda online dengan integrasi basis data inventaris terstruktur untuk UMKM lokal.
+                            Website katalog dan pemesanan online kuliner tradisional khas Sunda dengan pengelolaan basis data relasional MySQL untuk UMKM lokal.
                         </p>
-                        <ul class="project-highlights">
-                            <li><i class="fa-solid fa-circle-check"></i> Katalog pemesanan online interaktif dengan keranjang belanja terstruktur</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Panel admin untuk pengelolaan data pesanan dan stok bahan baku</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Arsitektur basis data relasional MySQL terstruktur rapi</li>
-                        </ul>
                         <div class="project-badges font-mono">
                             <span class="badge">PHP</span>
                             <span class="badge">MySQL</span>
                             <span class="badge">Bootstrap</span>
+                        </div>
+                        <div class="project-cta-group">
+                            <button type="button" class="btn btn-outline btn-sm font-mono btn-project-detail" data-modal="proj-4">
+                                <i class="fa-solid fa-circle-info"></i> Detail Proyek
+                            </button>
+                            <a href="https://github.com/faresbrilyan/Website-Dbubuy.git" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm font-mono">
+                                <i class="fa-brands fa-github"></i> Lihat Repo
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -794,6 +850,7 @@ Saya tertarik untuk berdiskusi dan berkolaborasi dengan Anda mengenai proyek...<
                         <button type="submit" class="btn btn-primary btn-submit font-mono">
                             <i class="fa-solid fa-paper-plane"></i> Kirim Pesan via Email
                         </button>
+                        <div id="formStatus" class="form-status font-mono" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
@@ -833,6 +890,19 @@ Saya tertarik untuk berdiskusi dan berkolaborasi dengan Anda mengenai proyek...<
             </div>
         </div>
     </footer>
+
+    <!-- DETAIL POP-OUT MODAL -->
+    <div id="detailModal" class="detail-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-dialog">
+            <button type="button" class="modal-close font-mono" id="modalCloseBtn" aria-label="Tutup Pop-out">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body-content" id="modalBodyContent">
+                <!-- Populated dynamically via script.js -->
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
