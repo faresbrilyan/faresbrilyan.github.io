@@ -108,25 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // ===== HERO TILT (Desktop & rAF throttled) =====
+    // ===== HERO ID CARD 3D TILT (Desktop & rAF throttled) =====
     const hero     = document.querySelector('.hero');
-    const heroImg  = document.querySelector('.hero-img');
-    const heroAura = document.querySelector('.hero-img-aura');
+    const heroCard = document.querySelector('.hero-id-card') || document.querySelector('.hero-img');
 
-    if (hero && heroImg && !prefersReducedMotion) {
+    if (hero && heroCard && !prefersReducedMotion) {
         let heroTicking = false;
         let heroX = 0;
         let heroY = 0;
 
         hero.addEventListener('mousemove', (e) => {
             if (window.innerWidth < 768) return;
-            heroX = (e.clientX / window.innerWidth  - 0.5) * 16;
-            heroY = (e.clientY / window.innerHeight - 0.5) * 16;
+            heroX = (e.clientX / window.innerWidth  - 0.5) * 12;
+            heroY = (e.clientY / window.innerHeight - 0.5) * 12;
 
             if (!heroTicking) {
                 window.requestAnimationFrame(() => {
-                    heroImg.style.transform  = `translate3d(${heroX}px, ${heroY}px, 0) rotateX(${-heroY / 2}deg) rotateY(${heroX / 2}deg)`;
-                    if (heroAura) heroAura.style.transform = `translate3d(${-heroX * 0.5}px, ${-heroY * 0.5}px, 0)`;
+                    heroCard.style.transform = `perspective(1000px) rotateY(${-3 + heroX}deg) rotateX(${2 - heroY}deg) translate3d(${heroX * 0.4}px, ${heroY * 0.4}px, 0)`;
                     heroTicking = false;
                 });
                 heroTicking = true;
@@ -134,8 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         hero.addEventListener('mouseleave', () => {
-            heroImg.style.transform  = '';
-            if (heroAura) heroAura.style.transform = '';
+            heroCard.style.transform = '';
         });
     }
 
