@@ -762,6 +762,7 @@ button { font-family: inherit; }
 .hero-id-card {
     position: relative;
     width: 325px;
+    max-width: 100%;
     background: #ffffff;
     border: 1.5px solid rgba(228, 228, 231, 0.95);
     border-radius: 22px;
@@ -1976,8 +1977,8 @@ button { font-family: inherit; }
     .nav-link { padding: 0.6rem 1rem; border-radius: var(--radius-sm); }
 
     .hero { padding: 7.5rem 1.25rem 3.5rem; }
-    .hero-heading { font-size: clamp(2.25rem, 9vw, 3.25rem); }
-    .hero-id-card { width: 295px; transform: none; }
+    .hero-heading { font-size: clamp(2rem, 8.5vw, 3.25rem); word-break: break-word; }
+    .hero-id-card { width: 295px; max-width: 100%; transform: none; }
     .scroll-indicator { display: none; }
 
     .skills-bento { grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); }
