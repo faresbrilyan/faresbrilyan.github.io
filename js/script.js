@@ -309,11 +309,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'INTERNATIONAL SHORT FILM COMPETITION',
             title: 'Kompetisi Film Pendek — "BUNTU"',
             subtitle: '<i class="fa-solid fa-landmark text-emerald"></i> Politeknik Negeri Sambas (2024)',
-            desc: 'Film pendek yang mengangkat tema etika penggunaan kecerdasan buatan (AI) di lingkungan perkuliahan, menceritakan tentang ketergantungan mahasiswa terhadap teknologi instan dalam mengerjakan tugas akademik.',
+            desc: 'Film pendek yang mengangkat dilema etika seputar pemanfaatan AI di dunia perkuliahan, menceritakan godaan mahasiswa yang tergoda jalan pintas teknologi instan dalam menyelesaikan tugas akademik.',
             highlights: [
-                'Berperan sebagai sutradara dan sinematografer.',
-                'Menyusun konsep cerita, pengambilan gambar, dan penyuntingan video.',
-                'Meraih Juara 1 dalam kompetisi film pendek yang diselenggarakan oleh Politeknik Negeri Sambas.'
+                'Menulis naskah konsep, menyutradarai, dan mengarahkan sinematografi selama masa produksi.',
+                'Mengatur komposisi visual dan alur editing agar pesan cerita tersampaikan tajam ke penonton.',
+                'Berhasil meraih Juara 1 pada Kompetisi Film Pendek Internasional di Politeknik Negeri Sambas.'
             ],
             badges: ['Film Pendek', 'Sinematografi', 'Directing', 'Video Editing'],
             action: null
@@ -324,11 +324,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'SUBANG INNOVATION FESTIVAL 2025',
             title: 'Inovasi Sistem Inventaris & Pembukuan UMKM',
             subtitle: '<i class="fa-solid fa-city text-emerald"></i> Pemerintah Kabupaten Subang (2025)',
-            desc: 'Perancangan sistem pencatatan stok barang dan pembukuan internal berbasis Excel VBA Macro untuk membantu pengelolaan data persediaan di UMKM Wiguna Nusantara.',
+            desc: 'Sistem pencatatan stok dan pembukuan otomatis berbasis Excel VBA Macro yang dibuat untuk menertibkan data persediaan barang di UMKM Wiguna Nusantara.',
             highlights: [
-                'Membuat formulir otomatis untuk pencatatan mutasi barang masuk dan keluar.',
-                'Menyusun rekapitulasi data stok berbasis formula dan logika VBA agar pencatatan barang lebih rapi.',
-                'Meraih Juara 2 kategori inovasi pada Subang Innovation Festival 2025.'
+                'Bikin form otomatis agar proses input mutasi barang masuk dan keluar jadi jauh lebih praktis.',
+                'Menerapkan formula dan logika VBA untuk rekapitulasi data stok real-time tanpa risiko salah hitung manual.',
+                'Membawa inovasi sistem ini meraih Juara 2 pada Subang Innovation Festival 2025.'
             ],
             badges: ['Excel VBA', 'Manajemen Stok', 'Automasi Spreadsheet'],
             action: {
@@ -344,11 +344,11 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'NATIONAL VIDEOGRAPHY COMPETITION',
             title: 'Lomba Videografi — Dokumentasi Kuliner Tradisional',
             subtitle: '<i class="fa-solid fa-film text-emerald"></i> Tingkat Nasional (2025)',
-            desc: 'Video dokumentasi mengenai proses pembuatan kuliner tradisional khas Subang (d\'bubuy ma\'atik) untuk memperkenalkan kuliner lokal ke khalayak yang lebih luas.',
+            desc: 'Video dokumentasi tentang pembuatan kuliner tradisional khas Subang (d\'bubuy ma\'atik), dirancang untuk mengenalkan kuliner autentik daerah ke audiens nasional.',
             highlights: [
-                'Melakukan pengambilan gambar dan penyuntingan video dokumentasi kuliner.',
-                'Mendokumentasikan tahapan tradisional pengolahan makanan khas daerah.',
-                'Meraih Juara Harapan 1 pada kompetisi videografi tingkat nasional.'
+                'Menangani pengambilan gambar, tata visual, dan proses penyuntingan video dari awal sampai selesai.',
+                'Mendokumentasikan tahapan tradisional pengolahan kuliner khas daerah secara sinematik.',
+                'Meraih Juara Harapan 1 dalam ajang kompetisi videografi tingkat nasional.'
             ],
             badges: ['Videografi', 'Dokumentasi', 'Video Editing'],
             action: null
@@ -360,12 +360,12 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'img/WFC Radar.png',
             title: 'WFC Radar — Direktori Kafe Ramah Kerja',
             subtitle: '<i class="fa-solid fa-satellite-dish text-emerald"></i> Next.js + Leaflet + Supabase',
-            desc: 'Aplikasi web direktori tempat kerja (Work From Cafe) berbasis peta interaktif untuk membantu pekerja remote dan mahasiswa menemukan kafe dengan fasilitas pendukung yang sesuai.',
+            desc: 'Web direktori berbasis peta interaktif untuk membantu remote worker, freelancer, dan mahasiswa menemukan kafe yang benar-benar nyaman buat kerja atau nugas.',
             highlights: [
-                'Peta interaktif menggunakan Leaflet & OpenStreetMap dengan filter radius jarak dan deteksi lokasi pengguna.',
-                'Informasi ketersediaan fasilitas kerja: colokan listrik, estimasi kecepatan Wi-Fi, tingkat kebisingan, dan musala.',
-                'Formulir kontribusi publik untuk menambahkan data spot kafe baru.',
-                'Dibangun menggunakan Next.js App Router, TypeScript, Tailwind CSS, dan Supabase.'
+                'Peta interaktif Leaflet dengan filter radius jarak dan deteksi lokasi otomatis dari perangkat pengguna.',
+                'Menyajikan metrik penting: colokan di tiap meja, tes kecepatan Wi-Fi (Mbps), tingkat kebisingan, hingga musala.',
+                'Fitur crowd-submission terkurasi agar komunitas bisa ikut merekomendasikan spot kafe favorit.',
+                'Dibangun full stack menggunakan Next.js App Router, TypeScript, Tailwind CSS, dan Supabase.'
             ],
             badges: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Supabase', 'Vercel'],
             action: {
@@ -382,11 +382,11 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'img/Wandermed.png',
             title: 'WanderMed — Direktori Faskes Darurat',
             subtitle: '<i class="fa-solid fa-map-location-dot text-emerald"></i> Laravel + Google Maps Platform',
-            desc: 'Sistem informasi geografis direktori fasilitas kesehatan (rumah sakit, klinik, dan apotek) di Kabupaten Subang dengan rute navigasi Google Maps untuk wisatawan.',
+            desc: 'Peta digital interaktif untuk membantu wisatawan dan warga di Kabupaten Subang menemukan faskes darurat terdekat (rumah sakit, klinik, dan apotek) saat butuh pertolongan medis cepat.',
             highlights: [
-                'Pencarian lokasi faskes darurat terdekat dengan rute navigasi Google Maps.',
-                'Halaman dashboard admin berbasis Laravel untuk pengelolaan data fasilitas kesehatan.',
-                'Penyimpanan dan pengelolaan data menggunakan basis data MySQL.'
+                'Kalkulasi rute tercepat menuju lokasi faskes terdekat terintegrasi Google Maps Platform.',
+                'Dashboard admin berbasis Laravel untuk pembaruan data faskes, jam operasional, dan nomor darurat.',
+                'Pengelolaan database relasional terstruktur menggunakan MySQL.'
             ],
             badges: ['Laravel', 'Google Maps API', 'MySQL', 'PHP'],
             action: {
@@ -403,11 +403,11 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'img/COMFY.png',
             title: 'Comfy C-System — Sistem Inventaris Pergudangan',
             subtitle: '<i class="fa-solid fa-trophy text-emerald"></i> Excel VBA Macro + Data Modeling',
-            desc: 'Aplikasi manajemen stok barang dan pembukuan internal berbasis Excel VBA Macro untuk efisiensi pengelolaan inventaris UMKM Wiguna Nusantara.',
+            desc: 'Aplikasi inventaris pergudangan dan pembukuan internal berbasis Excel VBA Macro untuk menertibkan pencatatan stok di UMKM Wiguna Nusantara.',
             highlights: [
-                'Formulir input mutasi stok barang masuk dan keluar dengan validasi VBA.',
-                'Laporan rekapitulasi data stok gudang otomatis.',
-                'Meraih Juara 2 pada Subang Innovation Festival 2025.'
+                'Formulir input mutasi barang masuk-keluar dengan validasi otomatis agar data selalu akurat.',
+                'Rekapitulasi laporan stok gudang berkala tanpa perlu penghitungan manual yang memakan waktu.',
+                'Meningkatkan efisiensi kerja operasional gudang dan sukses meraih Juara 2 di Subang Innovation Festival 2025.'
             ],
             badges: ['Excel VBA', 'Macro Logic', 'Data Modeling'],
             action: {
@@ -424,11 +424,11 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'img/dbubuy.png',
             title: 'd\'bubuy ma\'atik — Platform Pemesanan Kuliner UMKM',
             subtitle: '<i class="fa-solid fa-store text-emerald"></i> PHP + MySQL + Bootstrap',
-            desc: 'Website katalog dan pemesanan online kuliner khas Sunda dengan pengelolaan basis data relasional MySQL untuk UMKM lokal.',
+            desc: 'Website katalog dan pemesanan online kuliner tradisional khas Sunda, dibuat untuk membantu UMKM lokal menjangkau lebih banyak pembeli dan merapikan data pesanan.',
             highlights: [
-                'Katalog menu online interaktif dengan fitur keranjang belanja.',
-                'Panel admin untuk pengelolaan data pesanan dan pencatatan bahan baku.',
-                'Struktur basis data relasional menggunakan MySQL.'
+                'Katalog menu online interaktif lengkap dengan fitur pemesanan langsung bagi pelanggan.',
+                'Dashboard panel admin untuk memantau data pesanan masuk dan pencatatan bahan baku harian.',
+                'Struktur database relasional rapi menggunakan MySQL.'
             ],
             badges: ['PHP', 'MySQL', 'Bootstrap'],
             action: {
